@@ -1,0 +1,18 @@
+
+FROM alpine:3.9
+MAINTAINER Andre Karlsson <andre@tenforward.io>
+
+LABEL Description="Eclipse Mosquitto MQTT Broker"
+
+RUN apk --no-cache add mosquitto=1.5.6-r1 shadow bash && \
+    mkdir -p /opt/mosquitto/config /opt/mosquitto/data /opt/mosquitto/log && \
+    cp /etc/mosquitto/mosquitto.conf /opt/mosquitto/config && \
+    chown -R mosquitto:mosquitto /opt/mosquitto
+
+COPY docker/mosquitto/entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+VOLUME ["/opt/mosquitto/config", "/opt/mosquitto/data", "/opt/mosquitto/log"]
+
+CMD ["/usr/sbin/mosquitto", "-c", "/opt/mosquitto/config/mosquitto.conf"]

@@ -1,0 +1,69 @@
+version: '3'
+services:
+    mqttconsumer:
+        hostname: mqttconsumer
+        domainname: trv.local
+        # restart: always
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=0oBSTinatenEss#maRyl7uMbeL0@3162
+            - POSTGRES_HOSTNAME=timescaledb
+            - POSTGRES_PORT=5432
+            - FLASK_CONFIGURATION=development
+            - LOG_FILE=/tmp/mqttconsumerLOG.log
+        build:
+            context: .
+            dockerfile: docker/MQTT_Consumer/Dockerfile
+            args:
+                FS_RELOAD_BUILD_ARG: --fs-reload /usr/src/app
+        volumes:
+            - ./sla:/usr/src/app/
+        depends_on:
+            - timescaledb
+            - mosquitto
+    mosquitto:
+        hostname: mosquitto
+        domainname: trv.local
+        restart: always
+        tty: true
+        # restart: always
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=0oBSTinatenEss#maRyl7uMbeL0@3162
+            - POSTGRES_HOSTNAME=timescaledb
+            - POSTGRES_PORT=5432
+            - LOG_FILE=/tmp/mqttconsumerLOG.log
+        build:
+            context: .
+            dockerfile: docker/mosquitto/Dockerfile
+        environment:
+            - USER_ID=1001
+            - GROUP_ID=1001
+        ports:
+            - 1883:1883
+            - 9001:9001
+        volumes:
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/timezone:/etc/timezone:ro
+            - mosquitto-config:/opt/mosquitto/config
+            - mosquitto-data:/opt/mosquitto/data
+            - mosquitto-log:/opt/mosquitto/log
+    timescaledb:
+        hostname: timescaledb
+        domainname: trv.local
+        # restart: always
+        environment:
+            - POSTGRES_PASSWORD=0oBSTinatenEss#maRyl7uMbeL0@3162
+        build:
+            context: .
+            dockerfile: docker/timescaledb/Dockerfile
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+
+volumes:
+    postgres-data:
+    mosquitto-config:
+    mosquitto-data:
+    mosquitto-log:

@@ -1,0 +1,12 @@
+backend/bolagsratt_api/xml/xslt/*.xml
+backend/bolagsratt_api/xml/xslt/process.sh
+backend/bolagsratt_api/xml/xslt/saxon9he.jar
+backend/env/
+.vscode/.ropeproject/
+**/node_modules
+docs/**/*.pdf
+docs/technical/frontend
+docker/_build/*.tar
+docker/_build/.env
+/backend/devenvs.env
+docs/technical/backend/swagger.json

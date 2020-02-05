@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.8">
+    <root id="1">
+      <ServerVersion>10.5</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>13015</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <role id="3" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="4" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="5" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="6" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="7" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="8" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="9" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-10-12.07:56:47.979</IntrospectionTimestamp>
+      <IntrospectionStateNumber>557</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="10" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="pg_temp_1">
+      <ObjectId>11736</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11737</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="information_schema">
+      <ObjectId>12725</ObjectId>
+    </schema>
+    <sequence id="15" parent="9" name="savedpersons_id_seq">
+      <ObjectId>16393</ObjectId>
+      <StateNumber>557</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="16" parent="9" name="errands">
+      <ObjectId>16384</ObjectId>
+      <StateNumber>556</StateNumber>
+    </table>
+    <table id="17" parent="9" name="savedpersons">
+      <ObjectId>16395</ObjectId>
+      <StateNumber>557</StateNumber>
+    </table>
+    <column id="18" parent="16" name="errandnr">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>556</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="19" parent="16" name="done">
+      <Position>2</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>556</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="20" parent="16" name="data">
+      <Position>3</Position>
+      <DataType>jsonb|0s</DataType>
+      <StateNumber>556</StateNumber>
+      <TypeId>3802</TypeId>
+    </column>
+    <index id="21" parent="16" name="errands_pkey">
+      <ObjectId>16391</ObjectId>
+      <ColNames>errandnr</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="22" parent="16" name="errands_pkey">
+      <ObjectId>16392</ObjectId>
+      <ColNames>errandnr</ColNames>
+      <UnderlyingIndexName>errands_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="23" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>557</StateNumber>
+      <DefaultExpression>nextval(&apos;savedpersons_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>savedpersons_id_seq</SequenceName>
+    </column>
+    <column id="24" parent="17" name="namn">
+      <Position>2</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="25" parent="17" name="personnummer">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="26" parent="17" name="land">
+      <Position>4</Position>
+      <DataType>varchar(80)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="27" parent="17" name="fornamn">
+      <Position>5</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="28" parent="17" name="postadress">
+      <Position>6</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="29" parent="17" name="postnummer">
+      <Position>7</Position>
+      <DataType>varchar(20)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="30" parent="17" name="postort">
+      <Position>8</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <StateNumber>557</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="31" parent="17" name="savedpersons_pkey">
+      <ObjectId>16399</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="32" parent="17" name="savedpersons_pkey">
+      <ObjectId>16400</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>savedpersons_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

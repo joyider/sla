@@ -1,0 +1,8 @@
+frontend/node_modules
+docker/_build
+docs/
+.idea/
+.vscode/
+.git/
+build/
+env/

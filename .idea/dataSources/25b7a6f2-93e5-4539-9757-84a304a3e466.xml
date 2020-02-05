@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="project@localhost">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.8">
+    <root id="1">
+      <ServerVersion>14.0.303</ServerVersion>
+      <ServerType>standalone</ServerType>
+    </root>
+    <database id="2" parent="1" name="Project">
+      <ObjectId>5</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <database id="4" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <schema id="7" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2018-10-12.08:03:28.587</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="8" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="10" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="11" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="12" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="13" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="14" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="15" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="16" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="17" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="18" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="19" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="20" parent="7" name="Customer">
+      <ObjectId>21575115</ObjectId>
+      <CreatedTimestamp>2010-11-08.13:51:19.827</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-08.13:51:19.827</ModifiedTimestamp>
+    </table>
+    <table id="21" parent="7" name="MailTemplate">
+      <ObjectId>149575571</ObjectId>
+      <CreatedTimestamp>2010-11-17.22:15:17.747</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-17.22:15:17.997</ModifiedTimestamp>
+    </table>
+    <table id="22" parent="7" name="Project">
+      <ObjectId>197575742</ObjectId>
+      <CreatedTimestamp>2010-11-17.22:27:52.727</CreatedTimestamp>
+      <ModifiedTimestamp>2010-12-30.18:04:29.133</ModifiedTimestamp>
+    </table>
+    <table id="23" parent="7" name="SavedPersons">
+      <ObjectId>453576654</ObjectId>
+      <CreatedTimestamp>2016-10-25.12:15:24.497</CreatedTimestamp>
+      <ModifiedTimestamp>2016-10-25.13:22:22.247</ModifiedTimestamp>
+    </table>
+    <table id="24" parent="7" name="Strings">
+      <ObjectId>325576198</ObjectId>
+      <CreatedTimestamp>2010-12-30.18:06:28.993</CreatedTimestamp>
+      <ModifiedTimestamp>2010-12-30.18:06:28.993</ModifiedTimestamp>
+    </table>
+    <table id="25" parent="7" name="Users">
+      <ObjectId>117575457</ObjectId>
+      <CreatedTimestamp>2010-11-16.20:14:26.540</CreatedTimestamp>
+      <ModifiedTimestamp>2015-10-11.19:47:38.060</ModifiedTimestamp>
+    </table>
+    <column id="26" parent="20" name="CustomerNo">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="20" name="CustomerName">
+      <Position>2</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="28" parent="20" name="ContactName">
+      <Position>3</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="29" parent="20" name="ContactEmail">
+      <Position>4</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <index id="30" parent="20" name="PK_Customer">
+      <Position>1</Position>
+      <ColNames>CustomerNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="31" parent="20" name="PK_Customer">
+      <ObjectId>37575172</ObjectId>
+      <CreatedTimestamp>2010-11-08.13:51:19.827</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-08.13:51:19.827</ModifiedTimestamp>
+      <ColNames>CustomerNo</ColNames>
+      <UnderlyingIndexName>PK_Customer</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="32" parent="21" name="TemplateNo">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="21" name="Description">
+      <Position>2</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="34" parent="21" name="Subject">
+      <Position>3</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="35" parent="21" name="Body">
+      <Position>4</Position>
+      <DataType>varchar(8000 char)|0s</DataType>
+    </column>
+    <column id="36" parent="21" name="Privat">
+      <Position>5</Position>
+      <DefaultConstraintName>DF_MailTemplate_Privat</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="21" name="UserName">
+      <Position>6</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <index id="38" parent="21" name="PK_MailTemplate">
+      <Position>1</Position>
+      <ColNames>TemplateNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="21" name="PK_MailTemplate">
+      <ObjectId>181575685</ObjectId>
+      <CreatedTimestamp>2010-11-17.22:15:17.997</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-17.22:15:17.997</ModifiedTimestamp>
+      <ColNames>TemplateNo</ColNames>
+      <UnderlyingIndexName>PK_MailTemplate</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <default id="40" parent="21" name="DF_MailTemplate_Privat">
+      <ObjectId>165575628</ObjectId>
+      <ColNames>Privat</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <column id="41" parent="22" name="ProjectNo">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="22" name="Nr">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="22" name="Namn">
+      <Position>3</Position>
+      <DefaultConstraintName>DF_Project_Namn</DefaultConstraintName>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+      <DataType>varchar(80 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="22" name="Aktivt">
+      <Position>4</Position>
+      <DefaultConstraintName>DF_Project_Aktivt</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="22" name="OrgNr">
+      <Position>5</Position>
+      <DataType>char(12 char)|0s</DataType>
+    </column>
+    <column id="46" parent="22" name="Rubricering">
+      <Position>6</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="47" parent="22" name="Arvodesrad">
+      <Position>7</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="48" parent="22" name="InlDatum">
+      <Position>8</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="49" parent="22" name="AvslDatum">
+      <Position>9</Position>
+      <DataType>date|0s</DataType>
+    </column>
+    <column id="50" parent="22" name="Comment">
+      <Position>10</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="51" parent="22" name="Invoiced">
+      <Position>11</Position>
+      <DefaultConstraintName>DF_Project_Invoiced</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="22" name="Kund">
+      <Position>12</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="53" parent="22" name="KontaktEmail">
+      <Position>13</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="54" parent="22" name="KontaktForNamn">
+      <Position>14</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="55" parent="22" name="KontaktEfterNamn">
+      <Position>15</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+    </column>
+    <column id="56" parent="22" name="Created">
+      <Position>16</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="57" parent="22" name="CreatedBy">
+      <Position>17</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="58" parent="22" name="Updated">
+      <Position>18</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="59" parent="22" name="UpdatedBy">
+      <Position>19</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="60" parent="22" name="Lagerbolag">
+      <Position>20</Position>
+      <DefaultConstraintName>DF_Project_Aktivt3</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="22" name="Extra1">
+      <Position>21</Position>
+      <DefaultConstraintName>DF_Project_Aktivt2</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="22" name="Extra2">
+      <Position>22</Position>
+      <DefaultConstraintName>DF_Project_Aktivt1</DefaultConstraintName>
+      <DefaultExpression>0</DefaultExpression>
+      <DataType>bit|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="63" parent="22" name="PK_Project">
+      <Position>1</Position>
+      <ColNames>ProjectNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <index id="64" parent="22" name="IX_Project">
+      <Position>2</Position>
+      <ColNames>Nr</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="65" parent="22" name="PK_Project">
+      <ObjectId>261575970</ObjectId>
+      <CreatedTimestamp>2010-11-17.22:27:52.803</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-17.22:27:52.803</ModifiedTimestamp>
+      <ColNames>ProjectNo</ColNames>
+      <UnderlyingIndexName>PK_Project</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <default id="66" parent="22" name="DF_Project_Namn">
+      <ObjectId>213575799</ObjectId>
+      <ColNames>Namn</ColNames>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </default>
+    <default id="67" parent="22" name="DF_Project_Aktivt">
+      <ObjectId>229575856</ObjectId>
+      <ColNames>Aktivt</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <default id="68" parent="22" name="DF_Project_Invoiced">
+      <ObjectId>245575913</ObjectId>
+      <ColNames>Invoiced</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <default id="69" parent="22" name="DF_Project_Aktivt3">
+      <ObjectId>277576027</ObjectId>
+      <ColNames>Lagerbolag</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <default id="70" parent="22" name="DF_Project_Aktivt2">
+      <ObjectId>293576084</ObjectId>
+      <ColNames>Extra1</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <default id="71" parent="22" name="DF_Project_Aktivt1">
+      <ObjectId>309576141</ObjectId>
+      <ColNames>Extra2</ColNames>
+      <DefaultExpression>0</DefaultExpression>
+    </default>
+    <column id="72" parent="23" name="id">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="23" name="personnummer">
+      <Position>2</Position>
+      <DataType>varchar(20 char)|0s</DataType>
+    </column>
+    <column id="74" parent="23" name="namn">
+      <Position>3</Position>
+      <DataType>varchar(60 char)|0s</DataType>
+    </column>
+    <column id="75" parent="23" name="fornamn">
+      <Position>4</Position>
+      <DataType>varchar(40 char)|0s</DataType>
+    </column>
+    <column id="76" parent="23" name="postnummer">
+      <Position>5</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="77" parent="23" name="postort">
+      <Position>6</Position>
+      <DataType>varchar(30 char)|0s</DataType>
+    </column>
+    <column id="78" parent="23" name="land">
+      <Position>7</Position>
+      <DataType>varchar(40 char)|0s</DataType>
+    </column>
+    <column id="79" parent="23" name="postadress">
+      <Position>9</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+    </column>
+    <index id="80" parent="23" name="PK_SavedPersons_1">
+      <Position>1</Position>
+      <ColNames>id</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="81" parent="23" name="PK_SavedPersons_1">
+      <ObjectId>469576711</ObjectId>
+      <CreatedTimestamp>2016-10-25.12:15:24.853</CreatedTimestamp>
+      <ModifiedTimestamp>2016-10-25.12:15:24.853</ModifiedTimestamp>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>PK_SavedPersons_1</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="82" parent="24" name="StringsNo">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="83" parent="24" name="Name">
+      <Position>2</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+    </column>
+    <column id="84" parent="24" name="FieldName">
+      <Position>3</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+    </column>
+    <column id="85" parent="24" name="Caption">
+      <Position>4</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+    </column>
+    <column id="86" parent="24" name="Text1">
+      <Position>5</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <column id="87" parent="24" name="Text2">
+      <Position>6</Position>
+      <DataType>varchar(500 char)|0s</DataType>
+    </column>
+    <index id="88" parent="24" name="PK_Strings">
+      <Position>1</Position>
+      <ColNames>StringsNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="24" name="PK_Strings">
+      <ObjectId>341576255</ObjectId>
+      <CreatedTimestamp>2010-12-30.18:06:29.027</CreatedTimestamp>
+      <ModifiedTimestamp>2010-12-30.18:06:29.027</ModifiedTimestamp>
+      <ColNames>StringsNo</ColNames>
+      <UnderlyingIndexName>PK_Strings</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="90" parent="25" name="UserNo">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="25" name="UserName">
+      <Position>2</Position>
+      <DataType>varchar(80 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="25" name="Created">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="93" parent="25" name="LastLoggedIn">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <column id="94" parent="25" name="ViewSort">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="95" parent="25" name="ViewActive">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="96" parent="25" name="fldNewWarning">
+      <Position>7</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="97" parent="25" name="PK_Users">
+      <Position>1</Position>
+      <ColNames>UserNo</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="25" name="PK_Users">
+      <ObjectId>133575514</ObjectId>
+      <CreatedTimestamp>2010-11-16.20:14:26.603</CreatedTimestamp>
+      <ModifiedTimestamp>2010-11-16.20:14:26.603</ModifiedTimestamp>
+      <ColNames>UserNo</ColNames>
+      <UnderlyingIndexName>PK_Users</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
