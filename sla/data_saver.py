@@ -37,8 +37,8 @@ class DatabaseManager():
 # ===============================================================
 # Functions to push Sensor Data into Database
 
-# Function to save Temperature to DB Table
-def DHT22_Temp_Data_Handler(jsonData):
+# Function to save Temperature to TimescaleDB
+def Temp_Data_Handler(jsonData, dbg=False):
     # Parse Data
     json_Dict = json.loads(jsonData)
     SensorID = json_Dict['Sensor_ID']
@@ -51,12 +51,12 @@ def DHT22_Temp_Data_Handler(jsonData):
         "insert into DHT22_Temperature_Data (SensorID, Date_n_Time, Temperature) values (%s, %s, %s)",
         (SensorID, Data_and_Time, Temperature))
     del dbObj
-    print("Inserted Temperature Data into Database.")
-    print("")
+    if dbg:
+        print("Inserted Temperature Data into Database.\n")
 
 
-# Function to save Humidity to DB Table
-def DHT22_Humidity_Data_Handler(jsonData):
+# Function to save Humidity to TimescaleDB
+def Humidity_Data_Handler(jsonData, dbg=False):
     # Parse Data
     json_Dict = json.loads(jsonData)
     SensorID = json_Dict['Sensor_ID']
@@ -68,15 +68,15 @@ def DHT22_Humidity_Data_Handler(jsonData):
     dbObj.add_del_update_db_record("insert into DHT22_Humidity_Data (SensorID, Date_n_Time, Humidity)  values (%s, %s, %s)",
                                    (SensorID, Data_and_Time, Humidity))
     del dbObj
-    print("Inserted Humidity Data into Database.")
-    print("")
+    if dbg:
+        print("Inserted Humidity Data into Database. \n")
 
 
 # ===============================================================
 # Master Function to Select DB Funtion based on MQTT Topic
 
-def sensor_Data_Handler(Topic, jsonData):
-    if Topic == "Home/BedRoom/DHT22/Temperature":
-        DHT22_Temp_Data_Handler(jsonData)
-    elif Topic == "Home/BedRoom/DHT22/Humidity":
-        DHT22_Humidity_Data_Handler(jsonData)
+def sensor_Data_Handler(Topic, jsonData, dbg=False):
+    if Topic == "Sensors/Temperature":
+        Temp_Data_Handler(jsonData, dbg)
+    elif Topic == "Sensors/Humidity":
+        Humidity_Data_Handler(jsonData, dbg)
