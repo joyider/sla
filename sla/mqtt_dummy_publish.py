@@ -10,7 +10,7 @@ Keep_Alive_Interval = 45
 MQTT_Topic_Humidity = "Sensors/Humidity"
 MQTT_Topic_Temperature = "Sensors/Temperature"
 
-DEBUG = False
+DEBUG = True
 
 
 # ====================================================
@@ -49,7 +49,7 @@ toggle = 0
 
 
 def publish_Fake_Sensor_Values_to_MQTT():
-    threading.Timer(0.2, publish_Fake_Sensor_Values_to_MQTT).start()
+    threading.Timer(0.8, publish_Fake_Sensor_Values_to_MQTT).start()
     global toggle
     if toggle == 0:
         Humidity_Fake_Value = float("{0:.2f}".format(random.uniform(50, 100)))
