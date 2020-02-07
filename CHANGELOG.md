@@ -1,3 +1,8 @@
+## 0.0.3 (februari 07, 2020)
+  - Merge remote-tracking branch 'origin/master'
+  - Fix BFOR-02: Real Json and table def.
+  - Fix missing
+
 ## 0.0.2.d (februari 05, 2020)
   - Minor MQTT Consumer fix
 
